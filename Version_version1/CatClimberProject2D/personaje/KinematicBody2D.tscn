@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://gato_animate/gato_2.png" type="Texture" id=1]
+[ext_resource path="res://personaje/KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://gato_animate/gato_1.png" type="Texture" id=3]
+[ext_resource path="res://personaje/sprite_gato/gato/gatomansprite256.png" type="Texture" id=4]
+[ext_resource path="res://gato_animate/gato_4.png" type="Texture" id=5]
+[ext_resource path="res://gato_animate/gato_5.png" type="Texture" id=9]
+[ext_resource path="res://gato_animate/gato_6.png" type="Texture" id=10]
+[ext_resource path="res://gato_animate/gato_3 .png" type="Texture" id=11]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.6035
+height = 24.6474
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1128, 0, 188, 236 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+
+[sub_resource type="StreamTexture" id=4]
+flags = 4
+
+[sub_resource type="StreamTexture" id=5]
+flags = 4
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1504, 0, 188, 236 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "corriendo",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "saltando",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "agachar",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "parado",
+"speed": 4.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 90.612, 281.275 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.655, 0.655 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 362.126, 245.109 )
+shape = SubResource( 1 )
+
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( 361.944, 245.675 )
+scale = Vector2( 0.269045, 0.30732 )
+frames = SubResource( 7 )
+animation = "corriendo"
+frame = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 530.529, 80.5103 )
+current = true
+limit_left = -50
+limit_top = -100000
+limit_right = 950
+limit_bottom = 580
+smoothing_enabled = true
