@@ -1,0 +1,617 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://niveles/fruta.gd" type="Script" id=1]
+[ext_resource path="res://niveles/frutas.gd" type="Script" id=2]
+[ext_resource path="res://niveles/servidor.gd" type="Script" id=3]
+[ext_resource path="res://new_tileset.tres" type="TileSet" id=4]
+[ext_resource path="res://tiles/sandia.png" type="Texture" id=5]
+[ext_resource path="res://tiles/corazon.png" type="Texture" id=6]
+[ext_resource path="res://tiles/cuevafondo centro .png" type="Texture" id=7]
+[ext_resource path="res://personaje/KinematicBody2D.tscn" type="PackedScene" id=8]
+[ext_resource path="res://enemigo/enemigos.tscn" type="PackedScene" id=9]
+[ext_resource path="res://todoslostilesmitad.png" type="Texture" id=10]
+[ext_resource path="res://niveles/ladrillo_rompe.gd" type="Script" id=11]
+[ext_resource path="res://Piedra_fuego.tscn" type="PackedScene" id=12]
+[ext_resource path="res://tiles/todoslostilesmitad.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.8834, 14.7502 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 23.3652, 9.63937 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 469, 0, 469, 330, 0, 330 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 319, 0, 319, 285, 0, 285 )
+
+[sub_resource type="TileSet" id=6]
+0/name = "todoslostilesmitad.png 0"
+0/texture = ExtResource( 13 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( -8, 814, 469, 330 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 151, 160 )
+0/autotile/spacing = 6
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 4 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "todoslostilesmitad.png 1"
+1/texture = ExtResource( 13 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 498, 843, 319, 285 )
+1/tile_mode = 2
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 160, 150 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 5 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+
+[node name="nivel1" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 0, 0, 0.364706 )
+position = Vector2( 407.003, -966.068 )
+scale = Vector2( 1.1, 1 )
+texture = ExtResource( 7 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( -8.93574, 270.617 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 109, 50 )
+cell_quadrant_size = 10
+format = 1
+tile_data = PoolIntArray( -2031599, 0, 0, -1900546, 0, 0, -1966063, 0, 0, -1835010, 0, 0, -1900527, 0, 0, -1769474, 0, 0, -1834991, 0, 0, -1703938, 0, 0, -1769458, 0, 0, -1769457, 0, 0, -1769456, 0, 0, -1769455, 0, 0, -1638402, 0, 0, -1703919, 0, 0, -1572866, 0, 0, -1638383, 0, 0, -1507330, 0, 0, -1572855, 0, 0, -1572853, 0, 0, -1572851, 0, 0, -1572847, 0, 0, -1441794, 0, 0, -1507321, 0, 0, -1507311, 0, 0, -1376258, 0, 0, -1441787, 0, 0, -1441775, 0, 0, -1310722, 0, 0, -1376239, 0, 0, -1245186, 0, 0, -1310703, 0, 0, -1179650, 0, 0, -1179649, 0, 0, -1245184, 0, 0, -1245183, 0, 0, -1245182, 0, 0, -1245181, 0, 0, -1245167, 0, 0, -1114114, 0, 0, -1179631, 0, 0, -1048578, 0, 0, -1114096, 0, 0, -1114095, 0, 0, -983042, 0, 0, -1048561, 0, 0, -1048560, 0, 0, -1048559, 0, 0, -917506, 0, 0, -983026, 0, 0, -983025, 0, 0, -983024, 0, 0, -983023, 0, 0, -851970, 0, 0, -917498, 0, 0, -917497, 0, 0, -917495, 0, 0, -917494, 0, 0, -917487, 0, 0, -786434, 0, 0, -851967, 0, 0, -851966, 0, 0, -851964, 0, 0, -851963, 0, 0, -851957, 0, 0, -851951, 0, 0, -720898, 0, 0, -786427, 0, 0, -786421, 0, 0, -786415, 0, 0, -655362, 0, 0, -720891, 0, 0, -720885, 0, 0, -720884, 0, 0, -720879, 0, 0, -589826, 0, 0, -655354, 0, 0, -655350, 0, 0, -655343, 0, 0, -524290, 0, 0, -524289, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589807, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524271, 0, 0, -393218, 0, 0, -393217, 0, 0, -458752, 0, 0, -458751, 0, 0, -458735, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393199, 0, 0, -262146, 0, 0, -327667, 0, 0, -327666, 0, 0, -327664, 0, 0, -327663, 0, 0, -196610, 0, 0, -262127, 0, 0, -131074, 0, 0, -196591, 0, 0, -65538, 0, 0, -131055, 0, 0, -2, 0, 0, -65532, 0, 0, -65528, 0, 0, -65519, 0, 0, 65534, 0, 0, 5, 0, 0, 7, 0, 0, 17, 0, 0, 131070, 0, 0, 65553, 0, 0, 196606, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 262142, 0, 0, 196625, 0, 0, 327678, 0, 0, 262153, 0, 0, 262161, 0, 0, 393214, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327688, 0, 0, 327690, 0, 0, 327697, 0, 0, 458750, 0, 0, 393223, 0, 0, 393227, 0, 0, 393233, 0, 0, 524286, 0, 0, 458760, 0, 0, 458762, 0, 0, 458769, 0, 0, 589822, 0, 0, 524289, 0, 0, 524297, 0, 0, 524305, 0, 0, 655358, 0, 0, 589825, 0, 0, 589841, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 786430, 0, 0, 720913, 0, 0, 851966, 0, 0, 786449, 0, 0, 917502, 0, 0, 851985, 0, 0, 983038, 0, 0, 917509, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 1048574, 0, 0, 983044, 0, 0, 983057, 0, 0, 1114110, 0, 0, 1048579, 0, 0, 1048593, 0, 0, 1179646, 0, 0, 1114129, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1310718, 0, 0, 1310719, 0, 0, 1245184, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1376254, 0, 0, 1376255, 0, 0, 1310720, 0, 0, 1310721, 0, 0, 1310735, 0, 0, 1310736, 0, 0, 1310737, 0, 0, 1441790, 0, 0, 1441791, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1507326, 0, 0, 1507327, 0, 0, 1441792, 0, 0, 1441793, 0, 0, 1441794, 0, 0, 1441795, 0, 0, 1441796, 0, 0, 1441797, 0, 0, 1441798, 0, 0, 1441799, 0, 0, 1441800, 0, 0, 1441801, 0, 0, 1441802, 0, 0, 1441803, 0, 0, 1441804, 0, 0, 1441805, 0, 0, 1441806, 0, 0, 1441807, 0, 0, 1441808, 0, 0, 1441809, 0, 0 )
+
+[node name="frutas" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="fruta" type="Area2D" parent="frutas"]
+position = Vector2( 118.189, -247.32 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta4" type="Area2D" parent="frutas"]
+position = Vector2( -746.137, -248.765 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta4"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta4"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta11" type="Area2D" parent="frutas"]
+position = Vector2( -260.941, -724.448 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta11"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta11"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta2" type="Area2D" parent="frutas"]
+position = Vector2( 115.442, -148.596 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta2"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta2"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta3" type="Area2D" parent="frutas"]
+position = Vector2( -536.253, -98.1419 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta3"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta3"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta20" type="Area2D" parent="frutas"]
+position = Vector2( -371.835, -471.331 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta20"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta20"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta19" type="Area2D" parent="frutas"]
+position = Vector2( -481.981, -127.331 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta19"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta19"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta5" type="Area2D" parent="frutas"]
+position = Vector2( -207.457, -300.98 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta5"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta5"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta6" type="Area2D" parent="frutas"]
+position = Vector2( 121.063, -447.079 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta6"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta6"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta7" type="Area2D" parent="frutas"]
+position = Vector2( 118.215, -579.522 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta7"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta7"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta9" type="Area2D" parent="frutas"]
+position = Vector2( 63.6557, -628.249 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta9"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta9"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta15" type="Area2D" parent="frutas"]
+position = Vector2( 118.748, -481.32 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta15"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta15"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta16" type="Area2D" parent="frutas"]
+position = Vector2( 119.807, -528.824 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta16"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta16"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta8" type="Area2D" parent="frutas"]
+position = Vector2( 117.568, -620.971 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta8"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta8"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta10" type="Area2D" parent="frutas"]
+position = Vector2( -315.238, -722.982 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta10"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta10"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta13" type="Area2D" parent="frutas"]
+position = Vector2( -642.329, -673.728 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta13"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta13"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta12" type="Area2D" parent="frutas"]
+position = Vector2( -209.94, -721.923 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta12"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta12"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta14" type="Area2D" parent="frutas"]
+position = Vector2( 67.6425, -870.834 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta14"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta14"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta17" type="Area2D" parent="frutas"]
+position = Vector2( -749.703, -298.192 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta17"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta17"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="fruta18" type="Area2D" parent="frutas"]
+position = Vector2( -750.043, -340.437 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sandia" type="Sprite" parent="frutas/fruta18"]
+position = Vector2( 725.928, 481.097 )
+scale = Vector2( 0.205105, 0.205105 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frutas/fruta18"]
+position = Vector2( 726.39, 480.318 )
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -27.9509, 8.05809 )
+scale = Vector2( 0.168602, 0.168602 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 55.9997, 7.23959 )
+scale = Vector2( 0.160665, 0.160665 )
+texture = ExtResource( 6 )
+
+[node name="textoPuntos" type="Label" parent="."]
+margin_left = 71.8817
+margin_top = -5.38097
+margin_right = 151.882
+margin_bottom = 14.619
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.427451, 1, 0.372549, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textoFrutas" type="Label" parent="." groups=[
+"puntos",
+]]
+margin_left = -5.91351
+margin_top = -5.24746
+margin_right = 13.0865
+margin_bottom = 8.75254
+rect_scale = Vector2( 2, 2 )
+custom_colors/font_color = Color( 0.427451, 1, 0.372549, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 9 )]
+position = Vector2( 625.904, 310.402 )
+
+[node name="RigidBody2D2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 144.765, 214.285 )
+
+[node name="RigidBody2D3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 246.731, 86.5763 )
+
+[node name="ladrillo_rompe4" type="RigidBody2D" parent="."]
+position = Vector2( 351.364, 42.9966 )
+mass = 0.00102041
+gravity_scale = 0.0
+continuous_cd = 1
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ladrillo_rompe4"]
+position = Vector2( 2.69135, -0.863037 )
+scale = Vector2( 0.494394, 0.494394 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladrillo_rompe4"]
+position = Vector2( 2.2049, 0.944946 )
+shape = SubResource( 3 )
+
+[node name="ladrillo_rompe3" type="RigidBody2D" parent="."]
+position = Vector2( 462.061, -339.944 )
+mass = 0.00102041
+gravity_scale = 0.0
+continuous_cd = 1
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ladrillo_rompe3"]
+position = Vector2( 1.35579, -0.0998635 )
+scale = Vector2( 0.47913, 0.479131 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladrillo_rompe3"]
+position = Vector2( 0.827764, 1.94922 )
+shape = SubResource( 3 )
+
+[node name="ladrillo_rompe6" type="RigidBody2D" parent="."]
+position = Vector2( 189.822, -314.545 )
+mass = 0.00102041
+gravity_scale = 0.0
+continuous_cd = 1
+contacts_reported = 1
+contact_monitor = true
+linear_damp = 0.0
+angular_damp = 0.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ladrillo_rompe6"]
+position = Vector2( 1.35579, -0.0998635 )
+scale = Vector2( 0.47913, 0.479131 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ladrillo_rompe6"]
+position = Vector2( 0.827764, 1.94922 )
+shape = SubResource( 3 )
+
+[node name="trampolin" parent="." instance=ExtResource( 12 )]
+position = Vector2( 513.226, 531.246 )
+
+[node name="trampolin4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 188.587, -493.831 )
+
+[node name="trampolin3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 517.242, 81.5908 )
+
+[node name="objetos" type="TileMap" parent="."]
+position = Vector2( 0, 20 )
+scale = Vector2( 0.5, 0.5 )
+tile_set = SubResource( 6 )
+cell_size = Vector2( 130, 120 )
+cell_quadrant_size = 20
+format = 1
+[connection signal="body_entered" from="frutas/fruta" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta" to="frutas/fruta" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta4" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta4" to="frutas/fruta4" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta11" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta11" to="frutas/fruta11" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta2" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta2" to="frutas/fruta2" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta3" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta3" to="frutas/fruta3" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta20" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta20" to="frutas/fruta20" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta19" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta19" to="frutas/fruta19" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta5" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta5" to="frutas/fruta5" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta6" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta6" to="frutas/fruta6" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta7" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta7" to="frutas/fruta7" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta9" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta9" to="frutas/fruta9" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta15" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta15" to="frutas/fruta15" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta16" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta16" to="frutas/fruta16" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta8" to="frutas/fruta8" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta8" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta10" to="frutas/fruta10" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta10" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta13" to="frutas/fruta13" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta13" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta12" to="frutas/fruta12" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta12" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta14" to="frutas/fruta14" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta14" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta17" to="frutas/fruta17" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta17" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta18" to="frutas/fruta18" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta18" to="." method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="RigidBody2D2" to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="RigidBody2D3" to="." method="_on_RigidBody2D_body_entered"]
+[connection signal="body_entered" from="ladrillo_rompe4" to="ladrillo_rompe4" method="_on_ladrillo_rompe_body_entered"]
+[connection signal="body_entered" from="ladrillo_rompe3" to="ladrillo_rompe3" method="_on_ladrillo_rompe_body_entered"]
+[connection signal="body_entered" from="ladrillo_rompe6" to="ladrillo_rompe6" method="_on_ladrillo_rompe_body_entered"]
+[connection signal="body_entered" from="trampolin" to="KinematicBody2D" method="_on_trampolin_body_entered"]
+[connection signal="body_entered" from="trampolin4" to="KinematicBody2D" method="_on_trampolin_body_entered"]
+[connection signal="body_entered" from="trampolin3" to="KinematicBody2D" method="_on_trampolin_body_entered"]
