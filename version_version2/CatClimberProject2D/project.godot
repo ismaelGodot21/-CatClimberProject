@@ -21,8 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="juego 2d"
-run/main_scene="res://nivelesmenu/menú inicio.tscn"
-config/icon="res://tiles/icon.png"
+run/main_scene="res://escenas/niveles/niveltest.tscn"
+config/icon="res://recursos/tiles/icon.png"
 
 [display]
 
