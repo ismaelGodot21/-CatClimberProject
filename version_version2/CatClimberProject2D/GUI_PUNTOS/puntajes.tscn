@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/tiles/corazon.png" type="Texture" id=1]
+[ext_resource path="res://recursos/fuentes/arcade entrelazado.tres" type="DynamicFont" id=2]
+
+[sub_resource type="Theme" id=1]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 0, 0, 0.380392 )
+margin_left = 51.0
+margin_top = 18.0
+margin_right = 974.0
+margin_bottom = 51.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="corazon" type="TextureRect" parent="."]
+margin_left = 944.08
+margin_top = 20.6959
+margin_right = 1094.08
+margin_bottom = 170.696
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textoFrutas" type="Label" parent="." groups=[
+"puntos",
+]]
+margin_left = 854.111
+margin_top = -0.203777
+margin_right = 898.111
+margin_bottom = 45.7962
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.266667, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textoPuntos" type="Label" parent="."]
+margin_left = 57.2664
+margin_top = 21.1492
+margin_right = 409.266
+margin_bottom = 67.1492
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "score : "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timer" type="Label" parent="."]
+margin_left = 527.909
+margin_top = 19.9793
+margin_right = 773.909
+margin_bottom = 62.9792
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "time :"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -14,13 +14,8 @@
 radius = 19.6035
 height = 24.6474
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "corriendo",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "saltando",
@@ -30,6 +25,11 @@ animations = [ {
 "loop": true,
 "name": "parado",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "corriendo",
+"speed": 8.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -49,7 +49,7 @@ shape = SubResource( 1 )
 [node name="Animacion" type="AnimatedSprite" parent="."]
 position = Vector2( 361.944, 245.675 )
 scale = Vector2( 0.269045, 0.30732 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "corriendo"
 frame = 5
 
