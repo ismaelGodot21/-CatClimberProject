@@ -10,7 +10,7 @@
 [ext_resource path="res://TILESET/new_tileset.tres" type="TileSet" id=8]
 [ext_resource path="res://recursos/tiles/todoslostilesmitad.png" type="Texture" id=9]
 [ext_resource path="res://GUI_PUNTOS/puntajes.tscn" type="PackedScene" id=10]
-[ext_resource path="res://recursos/tiles/cuevafondo centro .png" type="Texture" id=11]
+[ext_resource path="res://escenas/niveles/fondo.tscn" type="PackedScene" id=11]
 [ext_resource path="res://recursos/todoslostilesmitad.png" type="Texture" id=12]
 [ext_resource path="res://todoslostilesmitad.png" type="Texture" id=13]
 [ext_resource path="res://Piedra_fuego.tscn" type="PackedScene" id=14]
@@ -96,11 +96,7 @@ points = PoolVector2Array( 0, 0, 319, 0, 319, 285, 0, 285 )
 [node name="nivel1" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="fondo_juego" type="Sprite" parent="."]
-modulate = Color( 1, 0, 0, 0.364706 )
-position = Vector2( 424.359, -978.179 )
-scale = Vector2( 1.1, 1 )
-texture = ExtResource( 11 )
+[node name="cueva" parent="." instance=ExtResource( 11 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -9.8577, 266.286 )
@@ -284,11 +280,11 @@ position = Vector2( 515.916, 532.601 )
 [connection signal="body_entered" from="frutas/fruta3" to="frutas/fruta3" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta3" to="KinematicBody2D" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta3" to="." method="_on_fruta_body_entered"]
-[connection signal="body_entered" from="frutas/fruta4" to="frutas/fruta4" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta4" to="KinematicBody2D" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta4" to="." method="_on_fruta_body_entered"]
-[connection signal="body_entered" from="frutas/fruta5" to="frutas/fruta5" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta4" to="frutas/fruta4" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta5" to="KinematicBody2D" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta5" to="frutas/fruta5" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta5" to="." method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_RigidBody2D_body_entered"]
 [connection signal="body_entered" from="RigidBody2D2" to="." method="_on_RigidBody2D_body_entered"]
@@ -297,13 +293,13 @@ position = Vector2( 515.916, 532.601 )
 [connection signal="body_entered" from="ladrillo_rompe4" to="ladrillo_rompe4" method="_on_ladrillo_rompe_body_entered"]
 [connection signal="body_entered" from="ladrillo_rompe3" to="ladrillo_rompe3" method="_on_ladrillo_rompe_body_entered"]
 [connection signal="body_entered" from="ladrillo_rompe6" to="ladrillo_rompe6" method="_on_ladrillo_rompe_body_entered"]
-[connection signal="body_entered" from="saco_dinero3" to="saco_dinero3" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero3" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
+[connection signal="body_entered" from="saco_dinero3" to="saco_dinero3" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero3" to="." method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero5" to="saco_dinero5" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero5" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero5" to="." method="_on_saco_dinero_body_entered"]
+[connection signal="body_entered" from="saco_dinero4" to="saco_dinero4" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero4" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero4" to="." method="_on_saco_dinero_body_entered"]
-[connection signal="body_entered" from="saco_dinero4" to="saco_dinero4" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="trampolin2" to="KinematicBody2D" method="_on_trampolin2_body_entered"]
