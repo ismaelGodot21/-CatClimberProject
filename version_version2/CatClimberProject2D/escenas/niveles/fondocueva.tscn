@@ -8,12 +8,13 @@
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
-background_energy = 0.9
+background_energy = 0.75
 ambient_light_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
-ambient_light_energy = 0.5
+ambient_light_energy = 0.8
 ambient_light_sky_contribution = 0.86
-fog_color = Color( 1, 1, 0.639216, 1 )
-fog_sun_color = Color( 1, 0.701961, 0.701961, 1 )
+fog_enabled = true
+fog_color = Color( 0.0235294, 0.580392, 0.952941, 1 )
+fog_sun_color = Color( 0.980392, 0.482353, 0.0470588, 1 )
 tonemap_mode = 2
 tonemap_exposure = 0.73
 auto_exposure_enabled = true
@@ -22,8 +23,12 @@ auto_exposure_speed = 2.0
 ss_reflections_enabled = true
 ssao_enabled = true
 dof_blur_far_enabled = true
+dof_blur_far_distance = 1.82
 glow_enabled = true
+glow_levels/1 = true
+glow_intensity = 1.13
 glow_strength = 0.96
+glow_bloom = 0.24
 glow_blend_mode = 1
 glow_hdr_scale = 1.46
 glow_bicubic_upscale = true
@@ -31,16 +36,16 @@ glow_bicubic_upscale = true
 [node name="cueva" type="Node2D"]
 visible = false
 modulate = Color( 0.788235, 0.752941, 0.701961, 1 )
-position = Vector2( -2.03058, 0.95279 )
+position = Vector2( -2.031, 0.5 )
 scale = Vector2( 2.2, 1.92 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2( -400, 0 )
-scale = Vector2( 1.5, 1.5 )
-transform = Transform2D( 1.5, 0, 0, 1.5, -400, 0 )
+offset = Vector2( -900, -1800 )
+scale = Vector2( 2, 3 )
+transform = Transform2D( 2, 0, 0, 3, -900, -1800 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.4, 0.4 )
+motion_scale = Vector2( 0.25, 0.25 )
 
 [node name="magma " type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2( 318.255, -713.892 )
@@ -58,14 +63,17 @@ scale = Vector2( 1.1, 1 )
 texture = ExtResource( 5 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.6, 0.5 )
+motion_scale = Vector2( 0.3, 0.3 )
 
 [node name="columnas" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( 319.438, -694.117 )
 scale = Vector2( 1.1, 1 )
 texture = ExtResource( 3 )
 
-[node name="estalactitas" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.4, 0.4 )
+
+[node name="estalactitas" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 327.468, -684.676 )
 rotation = 3.14159
 scale = Vector2( 1.14021, -1.0048 )

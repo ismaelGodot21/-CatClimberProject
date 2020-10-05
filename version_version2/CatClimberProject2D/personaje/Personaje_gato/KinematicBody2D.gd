@@ -17,7 +17,7 @@ var bala =load ("res://GUI_PUNTOS/GUI_puntos100.tscn")
 var balaa =load ("res://GUI_PUNTOS/GUI_puntos500.tscn")
 var Arma =load ("res://Armas/ArmaHueso.tscn")
 var corazones = 0
-
+var snap = 32
 var ejeY = 0
 var ejeX = 0
 
@@ -39,7 +39,7 @@ func _physics_process(_delta):
 	# agachar()
 	 
 # warning-ignore:return_value_discarded
-	move_and_slide(direccion,arriba)
+	move_and_slide(direccion, arriba)
 	 
 func mover():
 	if Input.is_action_pressed("izquierda"):

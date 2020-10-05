@@ -16,11 +16,6 @@ height = 24.6474
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "saltando",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "parado",
@@ -30,6 +25,11 @@ animations = [ {
 "loop": true,
 "name": "corriendo",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "saltando",
+"speed": 0.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
