@@ -11,11 +11,11 @@ var direccion = Vector2(0,0)
 
 var EnemigoAT  = false
 var trampolin = false
-onready var textoVidas = $textoPuntos
+onready var textoVidas = $textosPuntos
 var vidas = 3
-var bala =load ("res://GUI_PUNTOS/GUI_puntos100.tscn")
-var balaa =load ("res://GUI_PUNTOS/GUI_puntos500.tscn")
-var Arma =load ("res://Armas/ArmaHueso.tscn")
+var bala =load ("res://escenas/GUI_PUNTOS/GUI_puntos100.tscn")
+var balaa =load ("res://escenas/GUI_PUNTOS/GUI_puntos500.tscn")
+var Arma =load ("res://scripts/Armas/ArmaHueso.tscn")
 var corazones = 0
 var snap = 32
 var ejeY = 0

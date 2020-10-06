@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/UI/blue_panel.png" type="Texture" id=1]
+[ext_resource path="res://recursos/UI/grey_button09.png" type="Texture" id=2]
+[ext_resource path="res://escenas/ui selector/selector de niveles.gd" type="Script" id=3]
+
+[node name="TextureButton" type="TextureButton"]
+margin_right = 100.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 40.7893
+margin_top = 25.692
+margin_right = 80.7893
+margin_bottom = 39.692
+text = "1"
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]

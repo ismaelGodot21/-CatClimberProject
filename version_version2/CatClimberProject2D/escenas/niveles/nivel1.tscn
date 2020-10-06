@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scripts/ladrillo_rompe.gd" type="Script" id=1]
-[ext_resource path="res://GUI_PUNTOS/puntajes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/GUI_PUNTOS/puntajes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://enemigo/enemigos.tscn" type="PackedScene" id=3]
 [ext_resource path="res://personaje/Personaje_gato/KinematicBody2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Menu_principal/opciones.tscn" type="PackedScene" id=5]
@@ -100,6 +100,8 @@ script = ExtResource( 6 )
 [node name="cueva" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2.267, 0.5 )
 scale = Vector2( 3, 2 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -9.8577, 266.286 )
@@ -267,8 +269,6 @@ cell_size = Vector2( 130, 120 )
 cell_quadrant_size = 20
 format = 1
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 2 )]
-
 [node name="saco_dinero3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 785.528, 504.565 )
 
@@ -285,12 +285,12 @@ position = Vector2( 515.916, 532.601 )
 position = Vector2( 853.747, -631.007 )
 scale = Vector2( 0.4, 0.48 )
 move_to = Vector2( -5.5, 0 )
+[connection signal="body_entered" from="frutas/fruta3" to="frutas/fruta3" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta3" to="." method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta3" to="KinematicBody2D" method="_on_fruta_body_entered"]
-[connection signal="body_entered" from="frutas/fruta3" to="frutas/fruta3" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta4" to="." method="_on_fruta_body_entered"]
-[connection signal="body_entered" from="frutas/fruta4" to="KinematicBody2D" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta4" to="frutas/fruta4" method="_on_fruta_body_entered"]
+[connection signal="body_entered" from="frutas/fruta4" to="KinematicBody2D" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta5" to="." method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta5" to="KinematicBody2D" method="_on_fruta_body_entered"]
 [connection signal="body_entered" from="frutas/fruta5" to="frutas/fruta5" method="_on_fruta_body_entered"]
@@ -301,12 +301,12 @@ move_to = Vector2( -5.5, 0 )
 [connection signal="body_entered" from="ladrillo_rompe4" to="ladrillo_rompe4" method="_on_ladrillo_rompe_body_entered"]
 [connection signal="body_entered" from="ladrillo_rompe3" to="ladrillo_rompe3" method="_on_ladrillo_rompe_body_entered"]
 [connection signal="body_entered" from="ladrillo_rompe6" to="ladrillo_rompe6" method="_on_ladrillo_rompe_body_entered"]
+[connection signal="body_entered" from="saco_dinero3" to="saco_dinero3" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero3" to="." method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero3" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
-[connection signal="body_entered" from="saco_dinero3" to="saco_dinero3" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero5" to="." method="_on_saco_dinero_body_entered"]
-[connection signal="body_entered" from="saco_dinero5" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero5" to="saco_dinero5" method="_on_saco_dinero_body_entered"]
+[connection signal="body_entered" from="saco_dinero5" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero4" to="saco_dinero4" method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero4" to="." method="_on_saco_dinero_body_entered"]
 [connection signal="body_entered" from="saco_dinero4" to="KinematicBody2D" method="_on_saco_dinero_body_entered"]

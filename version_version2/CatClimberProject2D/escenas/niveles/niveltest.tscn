@@ -9,7 +9,7 @@
 [ext_resource path="res://scripts/ladrillo_rompe.gd" type="Script" id=7]
 [ext_resource path="res://TILESET/new_tileset.tres" type="TileSet" id=8]
 [ext_resource path="res://recursos/tiles/todoslostilesmitad.png" type="Texture" id=9]
-[ext_resource path="res://GUI_PUNTOS/puntajes.tscn" type="PackedScene" id=10]
+[ext_resource path="res://escenas/GUI_PUNTOS/puntajes.tscn" type="PackedScene" id=10]
 [ext_resource path="res://escenas/niveles/fondocueva.tscn" type="PackedScene" id=11]
 [ext_resource path="res://recursos/todoslostilesmitad.png" type="Texture" id=12]
 [ext_resource path="res://todoslostilesmitad.png" type="Texture" id=13]
@@ -102,6 +102,8 @@ position = Vector2( -0.457764, -3.96761 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( -9.8577, 266.286 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 10 )]
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -269,8 +271,6 @@ tile_set = SubResource( 6 )
 cell_size = Vector2( 130, 120 )
 cell_quadrant_size = 20
 format = 1
-
-[node name="CanvasLayer" parent="." instance=ExtResource( 10 )]
 
 [node name="saco_dinero3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 785.528, 504.565 )

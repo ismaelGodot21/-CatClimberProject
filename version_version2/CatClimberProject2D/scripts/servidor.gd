@@ -4,10 +4,9 @@ var puntos  = 0
 var vidas = 3 
 onready var textoFrutas =$CanvasLayer/textoPuntos
 onready var textoVidas = $CanvasLayer/textoFrutas
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
+
+export var nivel_int = 1 #este es el identificador del nivel
 
 func _on_fruta_body_entered(body):
 	if body.get_name() =="KinematicBody2D":
@@ -17,6 +16,8 @@ func _on_fruta_body_entered(body):
 
 
 func _process(_delta):
+	if nivel_int >= Globals.nivel_actual: #esto se debe ejecutar al pasar delnivel para el selector
+		Globals.nivel_actual +1
 	Vidas()
 	salir()
 	pass

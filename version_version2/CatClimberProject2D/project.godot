@@ -24,6 +24,10 @@ config/name="juego 2d"
 run/main_scene="res://escenas/niveles/niveltest.tscn"
 config/icon="res://recursos/tiles/icon.png"
 
+[autoload]
+
+Globals="*res://scripts/selector/globals.gd"
+
 [display]
 
 window/size/resizable=false

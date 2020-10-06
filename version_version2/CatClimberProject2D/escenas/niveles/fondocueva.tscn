@@ -36,13 +36,12 @@ glow_bicubic_upscale = true
 [node name="cueva" type="Node2D"]
 visible = false
 modulate = Color( 0.788235, 0.752941, 0.701961, 1 )
-position = Vector2( -2.031, 0.5 )
 scale = Vector2( 2.2, 1.92 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2( -900, -1800 )
+offset = Vector2( -900, 0 )
 scale = Vector2( 2, 3 )
-transform = Transform2D( 2, 0, 0, 3, -900, -1800 )
+transform = Transform2D( 2, 0, 0, 3, -900, 0 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.25, 0.25 )
