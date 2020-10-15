@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://personaje/gato_animate/gato_2.png" type="Texture" id=1]
 [ext_resource path="res://personaje/Personaje_gato/KinematicBody2D.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://personaje/gato_animate/parado.png" type="Texture" id=4]
 [ext_resource path="res://personaje/gato_animate/gato_4.png" type="Texture" id=5]
 [ext_resource path="res://personaje/gato_animate/saltando.png" type="Texture" id=6]
+[ext_resource path="res://recursos/shaders/TVshadert.tscn" type="PackedScene" id=7]
 [ext_resource path="res://personaje/gato_animate/gato_5.png" type="Texture" id=9]
 [ext_resource path="res://personaje/gato_animate/gato_6.png" type="Texture" id=10]
 [ext_resource path="res://personaje/gato_animate/gato_3 .png" type="Texture" id=11]
@@ -61,6 +62,14 @@ limit_top = -100000
 limit_right = 950
 limit_bottom = 580
 smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ColorRect" parent="Camera2D/CanvasLayer" instance=ExtResource( 7 )]
+margin_left = -76.0
+margin_top = -4.0
+margin_right = 1030.0
+margin_bottom = 605.0
 
 [node name="Arma" type="Position2D" parent="."]
 position = Vector2( 394.031, 250.877 )

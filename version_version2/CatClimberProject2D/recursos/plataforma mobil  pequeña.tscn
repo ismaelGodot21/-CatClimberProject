@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/todoslostilesmitad.png" type="Texture" id=1]
+[ext_resource path="res://scripts/plataforma mobil 1.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 171.525, 34.4715 )
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource( 2 )
+move_to = Vector2( 5, 0 )
+cell_size = Vector2( 374, 102 )
+speed = 150.0
+
+[node name="platform" type="KinematicBody2D" parent="."]
+
+[node name="spr" type="Sprite" parent="platform"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1566, 709, 374, 102 )
+
+[node name="col" type="CollisionShape2D" parent="platform"]
+position = Vector2( 0, 2.67267 )
+shape = SubResource( 1 )
+
+[node name="move_tween" type="Tween" parent="."]
+repeat = true
+playback/repeat = true

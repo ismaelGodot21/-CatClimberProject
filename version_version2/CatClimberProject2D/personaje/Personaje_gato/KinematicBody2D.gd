@@ -1,6 +1,6 @@
 extends KinematicBody2D
 const gravedad = 30  # CONTROL DE GRAVEDAD
-const velocidad = 300 # VELOCIDAD PERSONAJE
+var velocidad = 300 # VELOCIDAD PERSONAJE
 const velocidadT = 900
 const velocidadsalto = 700
 const PosicionCaida = 500
@@ -25,11 +25,7 @@ var ejeX = 0
 const calculadorY = 1000 
 const calculadorX = 2000
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
- 
-# Called when the node enters the scene tree for the first time.
+
 func _physics_process(_delta):
 	_huesoDD()
 	animar()
@@ -48,7 +44,11 @@ func mover():
 		direccion.x =   +velocidad
 	else:
 		 direccion.x = 0
-	
+	if (Input.is_action_pressed("correr")):
+		velocidad = 400
+	else:
+		velocidad = 300
+			
 func aplicar_gravedad():
 	if position.y > PosicionCaida:
 # warning-ignore:return_value_discarded
