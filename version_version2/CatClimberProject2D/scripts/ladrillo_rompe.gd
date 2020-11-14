@@ -22,3 +22,11 @@ func _on_ladrillo_rompe_body_entered(body):
 		print("destruye")
 		yield(get_tree().create_timer(1.0), "timeout")
 		self.queue_free()
+
+
+func _on_Area2D_area_entered(area):
+	pass # Replace with function body.
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.
