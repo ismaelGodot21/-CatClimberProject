@@ -17,11 +17,6 @@ height = 24.6474
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "corriendo",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "saltando",
@@ -31,9 +26,14 @@ animations = [ {
 "loop": true,
 "name": "parado",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "corriendo",
+"speed": 8.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="jugador1" type="KinematicBody2D"]
 position = Vector2( 90.612, 281.275 )
 script = ExtResource( 2 )
 

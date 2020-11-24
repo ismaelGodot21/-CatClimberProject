@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/tiles/todoslostilesmitad.png" type="Texture" id=1]
+[ext_resource path="res://scripts/campana.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 25.6821, 30.8619 )
+
+[node name="Node2D" type="Area2D"]
+
+[node name="todoslostilesmitad" type="Sprite" parent="."]
+position = Vector2( -0.981812, 0.425995 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1644, 1679, 76, 80 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+[connection signal="body_entered" from="." to="CollisionShape2D" method="_on_Node2D_body_entered"]

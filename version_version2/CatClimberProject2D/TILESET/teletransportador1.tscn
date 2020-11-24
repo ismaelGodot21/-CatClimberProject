@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://recursos/todoslostilesmitad.png" type="Texture" id=1]
+[ext_resource path="res://TILESET/teletransportador1.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.6677, 57.7653 )
+
+[node name="teletransportarizquierda" type="Area2D"]
+use_parent_material = true
+script = ExtResource( 2 )
+
+[node name="todoslostilesmitad" type="Sprite" parent="."]
+position = Vector2( 1.29976, 2.80481 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 308, 995, 142, 138 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.38109 )
+shape = SubResource( 1 )
+
+[node name="posicionizquierda" type="Position2D" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Node2D_body_entered"]

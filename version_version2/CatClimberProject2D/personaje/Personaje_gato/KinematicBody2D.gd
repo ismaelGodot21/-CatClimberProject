@@ -110,7 +110,7 @@ func on_trampolin2_body_entered(body):
 
 
 func _on_fruta_body_entered(body):
-	if body.get_name() =="KinematicBody2D":
+	if body.get_name() =="jugador1":
 		_dispararr()
 	 
 	pass # Replace with function body.
@@ -144,7 +144,7 @@ func _huesoDD():
 
 
 func _on_trampolin2_body_entered(body):
-	if body.get_name() =="KinematicBody2D":
+	if body.get_name() =="jugador1":
 		trampolin = true
 		 
 		$Animacion.play("corriendo")

@@ -5,8 +5,9 @@ var nivel_actual: int = 1 setget nivel_actual_cambiado
 var datos_de_juego = {
 	'nivel_actual': nivel_actual
 }
-
-
+var teletransporte_izquierdo = "res://TILESET/teletransportador1.tscn"
+var posicion_piso_izquierdo = Vector2(100, 100)
+var posicion_piso_derecho = get_position_in_parent(teletransporte_izquierdo);
 
 func _ready():
 	load_game() 
